@@ -1,7 +1,7 @@
 {
-    "name": "Template Project",
+    "name": "dagster-poc",
     "dockerComposeFile": "../docker-compose.yml",
-    "service": "python",
+    "service": "dagster-poc",
     "workspaceFolder": "/app",
     "shutdownAction": "stopCompose",
     "overrideCommand": true,
@@ -9,6 +9,8 @@
         "bash",
         "-c",
         "pip install -e .[dev]",
+        "bash",
+        "-c",
         "pre-commit install"
     ],
     "customizations": {
