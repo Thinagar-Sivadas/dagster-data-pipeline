@@ -1,6 +1,6 @@
 services:
-  python:
-    container_name: python
+  dagster-poc:
+    container_name: dagster-poc
     build:
       context: .
       dockerfile: Dockerfile
