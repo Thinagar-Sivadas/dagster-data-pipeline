@@ -9,5 +9,8 @@ services:
       - -c
       - |
         pip install -e .
+        dagster-dev
     volumes:
       - .:/app:cached
+    ports:
+      - 3000:3000
