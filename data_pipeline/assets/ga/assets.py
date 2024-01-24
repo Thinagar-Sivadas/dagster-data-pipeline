@@ -17,9 +17,7 @@ StaticPartitionsDefinition(["red", "yellow", "blue"])
     compute_kind="JDBC",
     partitions_def=MultiPartitionsDefinition(
         {
-            "date": DailyPartitionsDefinition(
-                start_date="2024-01-17", timezone="Asia/Singapore"
-            ),
+            "date": DailyPartitionsDefinition(start_date="2024-01-17", timezone="Asia/Singapore"),
             "publication": StaticPartitionsDefinition(["st", "bt", "zb"]),
         }
     ),
@@ -45,17 +43,13 @@ def ga(context: AssetExecutionContext) -> None:
     deps=[ga],
     partitions_def=MultiPartitionsDefinition(
         {
-            "date": DailyPartitionsDefinition(
-                start_date="2024-01-17", timezone="Asia/Singapore"
-            ),
+            "date": DailyPartitionsDefinition(start_date="2024-01-17", timezone="Asia/Singapore"),
             "publication": StaticPartitionsDefinition(["st", "bt", "zb"]),
         }
     ),
     compute_kind="pyspark",
     backfill_policy=BackfillPolicy.multi_run(max_partitions_per_run=2),
-    auto_materialize_policy=AutoMaterializePolicy.eager(
-        max_materializations_per_minute=10
-    ),
+    auto_materialize_policy=AutoMaterializePolicy.eager(max_materializations_per_minute=10),
 )
 def ga_hits(context: AssetExecutionContext) -> None:
     print("getting ga hits")

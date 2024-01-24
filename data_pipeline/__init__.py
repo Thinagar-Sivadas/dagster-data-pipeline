@@ -8,9 +8,7 @@ PROJECT_FOLDER = "data_pipeline"
 ASSET_FOLDER = "assets"
 
 # Load all modules from the root package
-modules = list(
-    pkgutil.iter_modules([f"{PROJECT_FOLDER}/{PROJECT_FOLDER}/{ASSET_FOLDER}"])
-)
+modules = list(pkgutil.iter_modules([f"{PROJECT_FOLDER}/{ASSET_FOLDER}"]))
 
 # Initialize an empty list to store all assets
 all_assets = []

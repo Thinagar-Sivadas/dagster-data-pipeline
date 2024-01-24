@@ -18,16 +18,14 @@ from dagster import (
     code_version="v1.0.3",
     partitions_def=MultiPartitionsDefinition(
         {
-            "date": DailyPartitionsDefinition(
-                start_date="2024-01-17", timezone="Asia/Singapore"
-            ),
+            "date": DailyPartitionsDefinition(start_date="2024-01-17", timezone="Asia/Singapore"),
             "publication": StaticPartitionsDefinition(["st"]),
         }
     ),
     backfill_policy=BackfillPolicy.multi_run(max_partitions_per_run=2),
-    auto_materialize_policy=AutoMaterializePolicy.eager(
-        max_materializations_per_minute=2
-    ).with_rules(AutoMaterializeRule.skip_on_not_all_parents_updated()),
+    auto_materialize_policy=AutoMaterializePolicy.eager(max_materializations_per_minute=2).with_rules(
+        AutoMaterializeRule.skip_on_not_all_parents_updated()
+    ),
 )
 def lumos_ga_hits(context: AssetExecutionContext) -> None:
     print("getting lumos_ga_hits")

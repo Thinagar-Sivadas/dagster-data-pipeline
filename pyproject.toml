@@ -2,30 +2,35 @@
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
-
 [project]
-name = "template_project"
+name = "dagster-data-pipeline"
 requires-python = ">=3.8"
 version = "1.0.0"
-description = "Template Project"
+description = "Dagster Project"
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [{ name = "Thinagar", email = "thinagar@gmail.com" }]
 maintainers = [{ name = "Thinagar", email = "thinagar@gmail.com" }]
 keywords = ["template-project", "python3"]
-dependencies = []
+dependencies = ["dagster", "dagster-cloud"]
 
 [project.optional-dependencies]
-dev = ["black", "pre-commit", "pytest", "pylint", "mypy", "isort"]
+dev = [
+    "black",
+    "pre-commit",
+    "pytest",
+    "pylint",
+    "mypy",
+    "isort",
+    "dagster-webserver",
+    "pandas",
+]
 
 [project.urls]
 Homepage = "https://example.com"
 Documentation = "https://readthedocs.org"
 Repository = "https://github.com/Thinagar-Sivadas/template-project.git"
 Issues = "https://github.com/Thinagar-Sivadas/template-project/issues"
-
-[project.scripts]
-template_project = "template_project.main:main"
 
 
 [tool.isort]
@@ -40,3 +45,7 @@ line-length = 120
 [tool.mypy]
 explicit_package_bases = true
 check_untyped_defs = true
+
+[tool.dagster]
+module_name = "data_pipeline"
+code_location_name = 'data engineering'

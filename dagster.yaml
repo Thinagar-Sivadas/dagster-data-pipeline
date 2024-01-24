@@ -1,3 +1,2 @@
-auto_materialize:
-  run_tags:
-    enabled: true
+telemetry:
+  enabled: false

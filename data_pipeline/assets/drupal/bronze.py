@@ -18,9 +18,7 @@ warnings.filterwarnings("ignore", category=ExperimentalWarning)
 @asset(
     compute_kind="JDBC",
     auto_materialize_policy=AutoMaterializePolicy.eager().with_rules(
-        AutoMaterializeRule.materialize_on_cron(
-            cron_schedule="53 20 * * *", timezone="Asia/Singapore"
-        )
+        AutoMaterializeRule.materialize_on_cron(cron_schedule="53 20 * * *", timezone="Asia/Singapore")
     ),
 )
 def drupal_bt(context: AssetExecutionContext) -> None:
