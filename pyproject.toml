@@ -12,19 +12,10 @@ license = { file = "LICENSE" }
 authors = [{ name = "Thinagar", email = "thinagar@gmail.com" }]
 maintainers = [{ name = "Thinagar", email = "thinagar@gmail.com" }]
 keywords = ["template-project", "python3"]
-dependencies = ["dagster", "dagster-cloud"]
+dependencies = ["dagster", "dagster-cloud", "dagster-webserver", "pandas"]
 
 [project.optional-dependencies]
-dev = [
-    "black",
-    "pre-commit",
-    "pytest",
-    "pylint",
-    "mypy",
-    "isort",
-    "dagster-webserver",
-    "pandas",
-]
+dev = ["black", "pre-commit", "pytest", "pylint", "mypy", "isort"]
 
 [project.urls]
 Homepage = "https://example.com"

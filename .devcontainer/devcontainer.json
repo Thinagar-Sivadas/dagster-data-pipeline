@@ -1,7 +1,7 @@
 {
-    "name": "dagster-poc",
+    "name": "dagster-data-pipeline",
     "dockerComposeFile": "../docker-compose.yml",
-    "service": "dagster-poc",
+    "service": "dagster-data-pipeline",
     "workspaceFolder": "/app",
     "shutdownAction": "stopCompose",
     "overrideCommand": true,

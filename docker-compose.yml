@@ -1,6 +1,6 @@
 services:
-  dagster-poc:
-    container_name: dagster-poc
+  dagster-data-pipeline:
+    container_name: dagster-data-pipeline
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,7 +9,7 @@ services:
       - -c
       - |
         pip install -e .
-        dagster-dev
+        dagster dev -h 0.0.0.0 -p 3000
     volumes:
       - .:/app:cached
     ports:
