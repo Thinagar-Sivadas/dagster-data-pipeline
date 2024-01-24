@@ -66,7 +66,7 @@
                 "isort.check": true,
                 "editor.formatOnSave": true,
                 "editor.codeActionsOnSave": {
-                    "source.organizeImports": true
+                    "source.organizeImports": "explicit"
                 },
                 "github.copilot.enable": {
                     "*": true,
@@ -74,7 +74,8 @@
                     "markdown": true,
                     "scminput": false
                 },
-                "security.workspace.trust.untrustedFiles": "open"
+                "security.workspace.trust.untrustedFiles": "open",
+                "terminal.integrated.defaultProfile.windows": "Git Bash"
             }
         }
     }
